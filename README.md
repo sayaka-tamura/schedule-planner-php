@@ -1,1 +1,1 @@
-schedule-planner that php is used
+This is a schedule-planner app that php is used
