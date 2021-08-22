@@ -10,6 +10,9 @@
     $m = substr($ym_now, 4, 2);
   }
 
+  var_dump($y);
+  var_dump($m);
+
   // 年月選択リストを表示する
   echo "<form action='' method='post'>";
 
