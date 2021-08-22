@@ -1,7 +1,14 @@
 <?php
-  $ym_now = date("Ym");
-  $y = substr($ym_now, 0, 4);
-  $d = substr($ym_now, 4, 2);
+  if(isset($_POST["y"])){
+    // 選択された年月を取得する
+    $y = intval($_POST["y"]);
+    $m = intval($_POST["m"]);
+  } else {
+    // 現在の年月を取得する
+    $ym_now = date("Ym");
+    $y = substr($ym_now, 0, 4);
+    $m = substr($ym_now, 4, 2);
+  }
 
   // 年のセレクトボックス
   echo "<select name='y'>";
