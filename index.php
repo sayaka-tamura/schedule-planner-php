@@ -1,10 +1,21 @@
 <table border="1">
   <tr>
     <?php
+    
       $y = 2021;
       $m = 2;
-      $d = 1;
 
+      // 月初日（1日）の曜日を取得
+      $wd1 = date("w", mktime(0, 0, 0, $m, 1, $y));
+      var_dump($wd1);
+
+      // その数だけ空白を表示
+      for($i = 1; $i <= $wd1; $i++){
+        echo "<td>  </td>";
+      }
+
+      // 1日から月末日までの表示
+      $d = 1;
       while(checkdate($m, $d, $y)){
         echo "<td>$d</td>";
         $d++;
