@@ -7,7 +7,7 @@
 
       while(checkdate($m, $d, $y)){
         echo "<td>$d</td>";
-        d++;
+        $d++;
       }
     ?>
   </tr>
