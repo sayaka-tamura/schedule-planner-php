@@ -27,7 +27,11 @@
   // 月のセレクトボックス
   echo "<select name='m'>";
   for ($i= 1; $i <= 12; $i++) { 
-    echo "<option>$i</option>";
+    echo "<option";
+    if ($i == $m){
+      echo " selected ";
+    }
+    echo ">$i</option>";
   } 
   echo "</select> 月";
   echo "<input type='submit' value='Show' name='sub1'>";
