@@ -1,4 +1,19 @@
+<?php
+  $ym_now = date("Ym");
+  $y = substr($ym_now, 0, 4);
+  $d = substr($ym_now, 4, 2);
+?>
+
 <table border="1">
+  <tr>
+    <th>日</th>
+    <th>月</th>
+    <th>火</th>
+    <th>水</th>
+    <th>木</th>
+    <th>金</th>
+    <th>土</th>
+  </tr>
   <tr>
     <?php
     
@@ -20,7 +35,13 @@
         echo "<td>$d</td>";
         $d++;
       }
-      
+
+      // 最後の週の土曜日まで移動
+      $wdx = date("w", mktime(0, 0, 0, $m+1, 0, $y));
+      for($i = 1; $i = 7 - $wdx; $i++){
+        echo "<td>  </td>";
+      }
+
       // 今日が土曜日の場合は
       if(date("w", mktime(0, 0, 0, $m, $d, $y)) == 6){
         // 週を終了
@@ -32,11 +53,6 @@
         }
       }
 
-      // 最後の週の土曜日まで移動
-      $wdx = date("w", mktime(0, 0, 0, $m+1, 0, $y));
-      for($i = 1; $i = 7 - $wdx; $i++){
-        echo "<td>  </td>";
-      }
     ?>
   </tr>
 </table>
