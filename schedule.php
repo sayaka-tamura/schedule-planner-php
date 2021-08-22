@@ -11,6 +11,7 @@ if (isset($_GET["ymd"])) {
   // スケジュールデータを取得する
   $filename = "data/{$ymd}.txt";
   if (file_exists($filename)){
+    var_dump($filename);
     $schedule = file_get_contents($filename);
   } else {
     $schedule = "";
@@ -54,9 +55,7 @@ if(isset($_POST["action"]) and $_POST("action")=="Update"){
       <!-- テキストエリア -->
       <tr>
         <td>
-          <textarea name="schedule" cols="50" rows="10" style="display: block;">
-            <?php $schedule; ?>
-          </textarea>
+          <textarea name="schedule" cols="50" rows="10" style="display: block;"><?php $schedule; ?>/textarea>
         </td>
       </tr>
       <!-- ボタンエリア -->
