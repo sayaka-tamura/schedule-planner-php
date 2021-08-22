@@ -10,6 +10,9 @@
     $m = substr($ym_now, 4, 2);
   }
 
+  // 年月選択リストを表示する
+  echo "<form action='' method='post'>";
+
   // 年のセレクトボックス
   echo "<select name='y'>";
   for ($i= $y-2; $i <= $y+2; $i++) { 
