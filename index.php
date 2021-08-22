@@ -16,7 +16,11 @@
   // 年のセレクトボックス
   echo "<select name='y'>";
   for ($i= $y-2; $i <= $y+2; $i++) { 
-    echo "<option>$i</option>";
+    echo "<option";
+    if ($i == $y){
+      echo " selected ";
+    }
+    echo ">$i</option>";
   }
   echo "</select> 年";
 
