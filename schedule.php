@@ -9,10 +9,10 @@ if (isset($_GET["ymd"])) {
   $disp_ymd = "{$y} 年 {$m} 月 {$d} 日のスケジュール";
 
   // スケジュールデータを取得する
-  $filename = "data/{$ymd}.txt";
-  if (file_exists($filename)){
-    var_dump($filename);
-    $schedule = file_get_contents($filename);
+  $file_name = "data/{$ymd}.txt";
+  if (file_exists($file_name)){
+    var_dump($file_name);
+    $schedule = file_get_contents($file_name);
   } else {
     $schedule = "";
   }
@@ -22,18 +22,18 @@ if (isset($_GET["ymd"])) {
 }
 
 // スケジュールを更新する
-if(isset($_POST["action"]) and $_POST("action")=="Update"){
+if(isset($_POST["action"]) and $_POST["action"]=="Update"){
   // 更新メッセージのサニタイズ処理
   $schedule = htmlspecialchars($_POST["schedule"], ENT_QUOTES, "UTF-8");
 
   // スケジュールが入力されたか調べて処理を分岐
   if(!empty($schedule)){
     // 入力された内容でスケジュールを更新
-    file_put_contents($filename, $schedule);
+    file_put_contents($file_name, $schedule);
   } else {
     // スケジュールが空の場合はファイルを削除
-    if(file_exists($filename)){
-      unlink($filename);
+    if(file_exists($file_name)){
+      unlink($file_name);
     }
   }
   // カレンダー画面に移動する
@@ -48,6 +48,7 @@ if(isset($_POST["action"]) and $_POST("action")=="Update"){
   <body>
     <h1>Schedule Planner (2. Register Schedule)</h1>
     <form action="" method="post">
+    <table>
       <!-- 日付のタイトル -->
       <tr>
         <td><?php echo $disp_ymd; ?></td>
@@ -66,6 +67,7 @@ if(isset($_POST["action"]) and $_POST("action")=="Update"){
           <input type="button" value="Go Back" name="back" onClick="history.back()">
         </td>
       </tr>
+    </table>
     </form>
   </body>
 </html>
