@@ -17,7 +17,7 @@ if (isset($_GET["ymd"])) {
     }
 } else {
     // カレンダー画面に強制移動する
-    header("Location: calendar.php");
+    header("Location: index.php");
 }
 
 // スケジュールを更新する
@@ -35,7 +35,7 @@ if (isset($_POST["action"]) and $_POST["action"] == "更新する") {
         }
     }
     // カレンダー画面に移動する
-    header("Location: calendar.php");
+    header("Location: index.php");
 }
 ?>
 <html>
