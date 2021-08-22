@@ -40,9 +40,9 @@
       $wdx = date("w", mktime(0, 0, 0, $m+1, 0, $y));
       var_dump($wdx);
 
-      // for($i = 1; $i = 7 - $wdx; $i++){
-      //   echo "<td>  </td>";
-      // }
+      for($i = 1; $i < 7 - $wdx; $i++){
+        echo "<td>  </td>";
+      }
 
       // 今日が土曜日の場合は
       if(date("w", mktime(0, 0, 0, $m, $d, $y)) == 6){
