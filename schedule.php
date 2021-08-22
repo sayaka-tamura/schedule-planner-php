@@ -5,7 +5,7 @@ if (isset($_GET["ymd"])) {
   $ymd = basename($_GET["ymd"]);
   $y = intval(substr($ymd, 0, 4));
   $m = intval(substr($ymd, 4, 2));
-  $d = intval(substr($ymd, 4, 2));
+  $d = intval(substr($ymd, 6, 2));
   $disp_ymd = "{$y} 年 {$m} 月 {$d} 日のスケジュール";
 
   // スケジュールデータを取得する
