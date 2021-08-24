@@ -11,7 +11,6 @@ if (isset($_GET["ymd"])) {
   // スケジュールデータを取得する
   $file_name = "data/{$ymd}.txt";
   if (file_exists($file_name)){
-    var_dump($file_name);
     $schedule = file_get_contents($file_name);
   } else {
     $schedule = "";
@@ -20,8 +19,6 @@ if (isset($_GET["ymd"])) {
   // カレンダー画面に強制移動する
   header("Location: index.php");
 }
-
-var_dump($_POST["action"]);
 
 // スケジュールを更新する
 if(isset($_POST["action"]) and $_POST["action"]=="Update"){
